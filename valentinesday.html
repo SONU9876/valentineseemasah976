@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Valentine's Day Neha 💕</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 40px;
+            color: white;
+            animation: glow 2s infinite alternate;
+        }
+
+        p {
+            font-size: 20px;
+            color: white;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px white; }
+            to { text-shadow: 0 0 30px red; }
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1><b>Happy Valentine's Day MY love Deepak💖<b></h1>
+    <p>You are the most special person in my life 🌹</p>
+    <button onclick="showLove()">Click For Surprise 💘</button>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function showLove() {
+            alert("Neha 💕\n\nI feel so lucky to have you in my life.\nYou make every day special 💖\nHappy Valentine's Day!");
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
